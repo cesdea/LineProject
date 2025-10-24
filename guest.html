@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GameTeller · 게스트</title>
+  <link rel="stylesheet" href="./assets/css/main.css" />
+</head>
+<body class="page-guest">
+  <header class="site-header">
+    <div class="header-inner container">
+      <div class="brand">GameTeller</div>
+      <nav class="nav"></nav>
+      <div class="header-actions">
+        <div class="dropdown login">
+          <button class="btn just dropdown-toggle" data-dropdown-toggle>Just for YOU</button>
+          <div class="dropdown-menu">
+            <div class="login">
+              <p class="title">로그인</p>
+              <p class="hint">sign up to find game just right for you!</p>
+              <!-- TODO: 실제 로그인 연동은 사용자가 구현 -->
+              <div class="fields">
+                <input type="email" placeholder="이메일" />
+                <input type="password" placeholder="비밀번호" />
+              </div>
+              <div class="actions">
+                <a class="btn signup">회원가입</a>
+                <button class="btn btn-primary">로그인</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-wrap container">
+    <!-- ===== 왼쪽 긴 네비게이션 바(아이콘 5개) ===== -->
+    <aside class="vnav">
+      <div class="vbar">
+        <!-- TODO: 아이콘 실제 디자인/라벨 교체 -->
+        <button class="vicon" title="검색"      data-action="search"></button>
+        <button class="vicon" title="AI 페이지"  data-action="ai"></button>
+        <button class="vicon" title="인기게임"   data-action="popular"></button>
+        <button class="vicon" title="신작게임"   data-action="new"></button>
+        <button class="vicon" title="MBTI 추천" data-action="mbti"></button>
+      </div>
+    </aside>
+
+    <section class="content">
+      <!-- ===== 상단 1/3: 지금 가장 핫한 게임 TOP 3 ===== -->
+      <section class="zone hot3">
+        <h2 class="section-title">지금 가장 핫한 게임 TOP 3</h2>
+        <div id="guestTop3" class="cards grid-3">
+          <!-- TODO(API): 여기로 3개 카드 렌더 -->
+        </div>
+      </section>
+
+      <!-- ===== 하단: 장르별 인기 게임 TOP 1 (6개) ===== -->
+      <section class="zone genrewrap">
+        <h2 class="section-title">장르별 인기 게임 TOP 1</h2>
+        <div id="guestYT" class="genres grid-3">
+          <!-- TODO(API): 여기로 6개 카드 렌더 (action, adventure, rpg, shooter, platformer, fighting 등) -->
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <!-- 스크립트 로딩 순서 권장: 설정 → 유틸 → 페이지 API 로직 -->
+  <script src="./assets/js/config.js"></script>        <!-- 사용자 -->
+  <script src="./assets/js/util.js"></script>          <!-- 사용자 -->
+  <script src="./assets/js/guest.wire.js"></script> <!-- 여기에 RAWG/렌더 호출 구현 -->
+  <script src="./assets/js/nav.js"></script>
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>

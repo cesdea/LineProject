@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GameTeller · 메인</title>
+  <link rel="stylesheet" href="./assets/css/main.css" />
+</head>
+<body>
+  <!-- ===== FULL PAGE HERO (이미지 잘림 없이) ===== -->
+  <main class="hero-full" role="banner">
+    <div class="bg">
+      <!-- TODO: 히어로 이미지 경로 교체 (assets/images/hero.jpg 등) -->
+      <img src="./assets/images/hero.jpg" alt="hero banner">
+    </div>
+
+    <!-- 아이콘 무리(떠다니는 레이어) -->
+    <div class="icon-field" id="iconField" aria-hidden="true"></div>
+
+    <div class="overlay">
+      <div class="hero-content">
+        <h1 class="site">GameTeller</h1>
+        <p class="sub">나만의 취향을 읽어주는 게임 큐레이션</p>
+        <div class="cta">
+          <!-- TODO: 회원 페이지 접근 전 '로그인' 처리 필요 시, 아래 버튼에 가드 로직 구현 (index.wire.js 참고) -->
+          <a id="ctaMember" href="./member.html" class="btn primary">나만의 게임 찾기</a>
+          <a href="./guest.html" class="btn ghost">바로 둘러보기</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- (선택) 로그인 모달: 필요하면 사용 -->
+<div id="loginModal" class="login-modal" hidden
+     role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+  <div class="sheet">
+    <h3 id="loginTitle">로그인</h3>
+    <input id="loginEmail" type="email" placeholder="이메일" autocomplete="email" />
+    <input id="loginPw" type="password" placeholder="비밀번호" autocomplete="current-password" />
+    <div class="row">
+      <button id="doLogin" class="btn primary">로그인</button>
+      <button id="closeLogin" class="btn ghost">닫기</button>
+    </div>
+  </div>
+</div>
+
+  <!-- 필수 스크립트: 순서 유지 권장 (유틸/설정 → 페이지 로직) -->
+  <script src="./config.js"></script>                 <!-- 사용자: API 키/엔드포인트 등 -->
+  <script src="./util.js"></script>                   <!-- 사용자: 공용 렌더/헬퍼 -->
+  <script src="./assets/js/floating-icons.js"></script> <!-- ★ 아이콘 무리 스폰 -->
+  <script src="./assets/js/index.wire.js"></script>   <!-- 로그인 가드·모달 연결 구현 -->
+  <script src="./assets/js/nav.js"></script>          <!-- 뒤로가기/드롭다운(필요 시) -->
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>
