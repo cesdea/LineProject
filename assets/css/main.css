@@ -293,9 +293,6 @@ body.modal-open{ overflow:hidden; }
 @media (max-width: 920px) { .ytgrid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
 @media (max-width: 600px) { .ytgrid { grid-template-columns: 1fr; } }
 
-/* ===== Member page spacing ===== */
-.page-member .page-wrap { padding-top: 84px; }
-
 /* ===== GameTeller AI Styles ===== */
 .vicon.vicon-ai{
   display:grid; place-items:center; font-size:20px; line-height:1;
