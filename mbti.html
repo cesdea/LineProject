@@ -30,22 +30,21 @@
             </div>
           </div>
         </div>
-      </div>
+      </div>  
     </div>
   </header>
 
-  <!-- main은 비워둠 -->
   <main class="page-wrap container">
-    <section class="guest-ui"> 
+    <section class="guest-ui">
       <div class="layout">
-        <!-- 좌측 필터 패널 -->
+        <!-- 좌측: MBTI 필터만 -->
         <aside class="filters">
           <div class="panel" role="region" aria-label="게스트 추천 필터">
             <div class="field">
               <label for="mbtiSelect">MBTI</label>
               <select id="mbtiSelect" class="select">
                 <option>INFJ</option>
-                <option>INFP</option>
+                <option selected>INFP</option>
                 <option>INTJ</option>
                 <option>INTP</option>
                 <option>ENFJ</option>
@@ -62,41 +61,18 @@
                 <option>ESTP</option>
               </select>
               <button id="btnApplyMbti" class="btn block">MBTI 적용</button>
-              <p class="hint">선택 후 카드가 해당 성향에 맞게 필터링됩니다.</p>
-            </div>
-
-            <div class="field">
-              <label for="genreSelect">장르</label>
-              <select id="genreSelect" class="select">
-                <option value="all">전체</option>
-                <option value="action">액션</option>
-                <option value="adventure">어드벤처</option>
-                <option value="rpg">RPG</option>
-                <option value="shooter">슈터</option>
-                <option value="platformer">플랫포머</option>
-                <option value="fighting">격투</option>
-                <option value="strategy">전략</option>
-                <option value="sports">스포츠</option>
-                <option value="racing">레이싱</option>
-                <option value="simulation">시뮬레이션</option>
-                <option value="indie">인디</option>
-              </select>
-            </div>
-
-            <div class="actions">
-              <button id="btnApplyFilters" class="btn btn-primary">적용</button>
-              <button id="btnResetFilters" class="btn ghost">초기화</button>
+              <p class="hint">선택 후 TOP 섹션에 반영됩니다.</p>
             </div>
           </div>
         </aside>
 
-        <!-- 결과 영역 -->
+        <!-- 우측: TOP 섹션들 -->
         <section class="results">
-          <h1 class="page-title">게스트 추천 목록</h1>
-          <div id="guestList" class="cards grid-responsive" aria-live="polite">
-            <!-- 카드가 동적으로 렌더링됩니다 -->
-          </div>
-        </section>
+          <!-- TOP 3 -->
+          <section class="zone hot3">
+            <h2 class="section-title">지금 가장 핫한 게임 TOP 3</h2>
+            <div id="mbtiTop3" class="cards grid-3" aria-live="polite"></div>
+          </section>
       </div>
     </section>
   </main>
@@ -104,7 +80,7 @@
   <!-- 스크립트 로딩 순서 고정 -->
   <script src="./assets/js/config.js"></script>
   <script src="./assets/js/util.js"></script>
-  <script src="./assets/js/guest.wire.js"></script>
+  <script src="./assets/js/mbti.wire.js"></script>
   <script src="./assets/js/nav.js"></script>
   <script src="./assets/js/app.js"></script>
 </body>
