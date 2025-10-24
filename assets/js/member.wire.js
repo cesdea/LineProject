@@ -1,7 +1,15 @@
 // member.wire.js
-
+function esc(v){
+  return String(v ?? '')
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;')
+    .replace(/'/g,'&#39;');
+}
 // 로그인 상태 확인 + 사용자 정보 표시 + 로그아웃
-
+function isLoggedIn() {
+}
 
 function isLoggedIn() {
   return localStorage.getItem('gt_isLoggedIn') === '1';
