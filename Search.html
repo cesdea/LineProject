@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ko">
-<script src="./assets/js/search-hot3.js" defer></script>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -10,7 +9,7 @@
 <body class="page-guest">
   <header class="site-header">
     <div class="header-inner container">
-      <div class="brand">GameTeller</div>
+      <a class="brand" href="index.html" style="text-decoration:none; color:inherit" >GameTeller</a>
       <nav class="nav"></nav>
       <div class="header-actions">
         <div class="dropdown login">
@@ -39,7 +38,7 @@
     <aside></aside>
     <section class="content">
       <div class="search-bar">
-        <input type="text" id="searchInput" placeholder="검색어를 입력하세요..." oninput="showSuggestions()">
+        <input type="text" id="searchInput" placeholder="검색어를 입력하세요..." />
       </div>
       <!-- ===== 상단 1 검색결과 출력 ===== -->
       <section class="search_resualt">
@@ -57,7 +56,6 @@
   <!-- 스크립트 로딩 순서 권장: 설정 → 유틸 → 페이지 API 로직 -->
   <script src="./assets/js/config.js"></script>        <!-- 사용자 -->
   <script src="./assets/js/util.js"></script>          <!-- 사용자 -->
-  <script src="./assets/js/guest.wire.js"></script> <!-- 여기에 RAWG/렌더 호출 구현 -->
   <script src="./assets/js/nav.js"></script>
   <script src="./assets/js/app.js"></script>
   <script src="./assets/js/search-enter-to-reasult.js"></script>

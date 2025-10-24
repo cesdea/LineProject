@@ -27,7 +27,7 @@
 
     resultEl.innerHTML = `<p style="opacity:.7;">"${esc(q)}" 검색 중…</p>`;
 
-    const url = `${RAWG_BASE}/games?key=${encodeURIComponent(RAWG_KEY)}&search=${encodeURIComponent(q)}&page_size=3&ordering=-metacritic`;
+    const url = `${RAWG_BASE}/games?key=${encodeURIComponent(RAWG_KEY)}&search=${encodeURIComponent(q)}&page_size=15&ordering=-metacritic`;
 
     try {
       const res = await fetch(url);
@@ -41,7 +41,7 @@
       }
 
       // 카드 3개 렌더
-      resultEl.innerHTML = games.slice(0, 3).map(g => {
+      resultEl.innerHTML = games.map(g => {
         const img = g.background_image || "";
         const meta = g.metacritic ?? "N/A";
         const genres = (g.genres || []).slice(0, 3).map(x => esc(x.name));

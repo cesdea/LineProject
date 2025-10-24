@@ -74,7 +74,7 @@
       const url =
         `${RAWG_BASE}/games?key=${RAWG_API_KEY}` +
         (mbtiGenres ? `&genres=${encodeURIComponent(mbtiGenres)}` : "") +
-        `&ordering=-added&page_size=9&dates=${encodeURIComponent("2013-01-01,2030-12-31")}`;
+        `&ordering=-added&page_size=15&dates=${encodeURIComponent("2013-01-01,2030-12-31")}`;
 
       const data = await apiGet(url);
       const results = data?.results ?? [];
