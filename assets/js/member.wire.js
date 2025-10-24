@@ -228,7 +228,7 @@ async function apiGetLogged(name, url) {
 async function loadHotVideos() {
     const query = "trending game trailer";
     const url = `${YT_BASE}/search?part=snippet&type=video&maxResults=3&q=${encodeURIComponent(query)}&key=${YT_API_KEY}`;
-    const data = await apiGet(url);
+    const data = await window.apiGet(url);
     const box = document.getElementById("guestYT");
     if (!box || !data?.items) return;
 

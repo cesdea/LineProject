@@ -4,7 +4,7 @@
   // RAWG: 인기 게임 TOP3 (added 순)
   async function loadPopularGames() {
     const url = `${RAWG_BASE}/games?key=${RAWG_API_KEY}&ordering=-added&page_size=3`;
-    const data = await apiGet(url);
+    const data = await window.apiGet(url);
     const box = document.getElementById("guestTop3");
     if (!box || !data?.results) return;
 
@@ -30,7 +30,7 @@
   async function loadHotVideos() {
     const query = "trending game trailer";
     const url = `${YT_BASE}/search?part=snippet&type=video&maxResults=3&q=${encodeURIComponent(query)}&key=${YT_API_KEY}`;
-    const data = await apiGet(url);
+    const data = await window.apiGet(url);
     const box = document.getElementById("guestYT");
     if (!box || !data?.items) return;
 
