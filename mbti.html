@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GameTeller · 게스트</title>
+  <link rel="stylesheet" href="./assets/css/mbti.css" />
+</head>
+<body class="page-guest">
+  <!-- Header는 유지 -->
+  <header class="site-header">
+    <div class="header-inner container">
+      <div class="brand">GameTeller</div>
+      <nav class="nav"></nav>
+      <div class="header-actions">
+        <div class="dropdown login">
+          <button class="btn just dropdown-toggle" data-dropdown-toggle>Just for YOU</button>
+          <div class="dropdown-menu">
+            <div class="login">
+              <p class="title">로그인</p>
+              <p class="hint">sign up to find game just right for you!</p>
+              <div class="fields">
+                <input type="email" placeholder="이메일" />
+                <input type="password" placeholder="비밀번호" />
+              </div>
+              <div class="actions">
+                <a class="btn signup">회원가입</a>
+                <button class="btn btn-primary">로그인</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- main은 비워둠 -->
+  <main class="page-wrap container">
+    <section class="guest-ui"> 
+      <div class="layout">
+        <!-- 좌측 필터 패널 -->
+        <aside class="filters">
+          <div class="panel" role="region" aria-label="게스트 추천 필터">
+            <div class="field">
+              <label for="mbtiSelect">MBTI</label>
+              <select id="mbtiSelect" class="select">
+                <option>INFJ</option>
+                <option>INFP</option>
+                <option>INTJ</option>
+                <option>INTP</option>
+                <option>ENFJ</option>
+                <option>ENFP</option>
+                <option>ENTJ</option>
+                <option>ENTP</option>
+                <option>ISFJ</option>
+                <option>ISFP</option>
+                <option>ISTJ</option>
+                <option>ISTP</option>
+                <option>ESFJ</option>
+                <option>ESFP</option>
+                <option>ESTJ</option>
+                <option>ESTP</option>
+              </select>
+              <button id="btnApplyMbti" class="btn block">MBTI 적용</button>
+              <p class="hint">선택 후 카드가 해당 성향에 맞게 필터링됩니다.</p>
+            </div>
+
+            <div class="field">
+              <label for="genreSelect">장르</label>
+              <select id="genreSelect" class="select">
+                <option value="all">전체</option>
+                <option value="action">액션</option>
+                <option value="adventure">어드벤처</option>
+                <option value="rpg">RPG</option>
+                <option value="shooter">슈터</option>
+                <option value="platformer">플랫포머</option>
+                <option value="fighting">격투</option>
+                <option value="strategy">전략</option>
+                <option value="sports">스포츠</option>
+                <option value="racing">레이싱</option>
+                <option value="simulation">시뮬레이션</option>
+                <option value="indie">인디</option>
+              </select>
+            </div>
+
+            <div class="actions">
+              <button id="btnApplyFilters" class="btn btn-primary">적용</button>
+              <button id="btnResetFilters" class="btn ghost">초기화</button>
+            </div>
+          </div>
+        </aside>
+
+        <!-- 결과 영역 -->
+        <section class="results">
+          <h1 class="page-title">게스트 추천 목록</h1>
+          <div id="guestList" class="cards grid-responsive" aria-live="polite">
+            <!-- 카드가 동적으로 렌더링됩니다 -->
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <!-- 스크립트 로딩 순서 고정 -->
+  <script src="./assets/js/config.js"></script>
+  <script src="./assets/js/util.js"></script>
+  <script src="./assets/js/guest.wire.js"></script>
+  <script src="./assets/js/nav.js"></script>
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>
