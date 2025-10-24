@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GameTeller · 게스트</title>
+  <link rel="stylesheet" href="./assets/css/mbti.css" />
+</head>
+<body class="page-guest">
+  <!-- Header는 유지 -->
+  <header class="site-header">
+    <div class="header-inner container">
+      <a class="brand" href="index.html" style="text-decoration:none; color:inherit" >GameTeller</a>
+      <nav class="nav"></nav>
+      <div class="header-actions">
+        <div class="dropdown login">
+          <button class="btn just dropdown-toggle" data-dropdown-toggle>Just for YOU</button>
+          <div class="dropdown-menu">
+            <div class="login">
+              <p class="title">로그인</p>
+              <p class="hint">sign up to find game just right for you!</p>
+              <div class="fields">
+                <input type="email" placeholder="이메일" />
+                <input type="password" placeholder="비밀번호" />
+              </div>
+              <div class="actions">
+                <a class="btn signup">회원가입</a>
+                <button class="btn btn-primary">로그인</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div>
+  </header>
+
+  <main class="page-wrap container">
+    <section class="guest-ui">
+      <div class="layout">
+        <!-- 좌측: MBTI 필터만 -->
+        <aside class="filters">
+          <div class="panel" role="region" aria-label="게스트 추천 필터">
+            <div class="field">
+              <label for="mbtiSelect">MBTI</label>
+              <select id="mbtiSelect" class="select">
+                <option>INFJ</option>
+                <option selected>INFP</option>
+                <option>INTJ</option>
+                <option>INTP</option>
+                <option>ENFJ</option>
+                <option>ENFP</option>
+                <option>ENTJ</option>
+                <option>ENTP</option>
+                <option>ISFJ</option>
+                <option>ISFP</option>
+                <option>ISTJ</option>
+                <option>ISTP</option>
+                <option>ESFJ</option>
+                <option>ESFP</option>
+                <option>ESTJ</option>
+                <option>ESTP</option>
+              </select>
+              <button id="btnApplyMbti" class="btn block">MBTI 적용</button>
+              <p class="hint">선택 후 TOP 섹션에 반영됩니다.</p>
+            </div>
+          </div>
+        </aside>
+
+        <!-- 우측: TOP 섹션들 -->
+        <section class="results">
+          <!-- TOP 3 -->
+          <section class="zone hot3">
+            <h2 class="section-title">지금 가장 핫한 게임 TOP 3</h2>
+            <div id="mbtiTop3" class="cards grid-3" aria-live="polite"></div>
+          </section>
+      </div>
+    </section>
+  </main>
+
+  <!-- 스크립트 로딩 순서 고정 -->
+  <script src="./assets/js/config.js"></script>
+  <script src="./assets/js/util.js"></script>
+  <script src="./assets/js/mbti.wire.js"></script>
+  <script src="./assets/js/nav.js"></script>
+  <script src="./assets/js/app.js"></script>
+  <script src="./assets/js/login.js"></script>
+</body>
+</html>

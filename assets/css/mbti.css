@@ -1,0 +1,143 @@
+/* ===== Reset & Base ===== */
+*,*::before,*::after{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+img{ max-width:100%; display:block; }
+
+:root{
+  --bg:#FDECCB; --fg:#1a1a1a; --muted:#6b7280;
+  --primary:#2b6cb0; --primary-weak:#e6f0ff;
+  --card:#fff; --radius:16px;
+  --shadow:0 12px 28px rgba(0,0,0,.14);
+  --sp-2:10px; --sp-3:14px; --sp-4:16px; --sp-6:24px; --sp-8:32px;
+  --w-content:1100px;
+}
+
+body{
+  background:var(--bg); color:var(--fg);
+  font-family:system-ui,-apple-system,'Segoe UI',Roboto,'Noto Sans KR',sans-serif;
+  line-height:1.5;
+}
+.container{ width:min(100%, var(--w-content)); margin-inline:auto; padding-inline: var(--sp-4); }
+
+/* ===== Buttons & Cards ===== */
+.btn{
+  display:inline-flex; align-items:center; gap:8px; padding:10px 16px;
+  border-radius:14px; border:2px solid #00000033; background:#fff; color:#111; text-decoration:none;
+  cursor:pointer; transition:transform .02s ease, background .15s ease;
+}
+.btn:active{ transform: translateY(1px); }
+.btn.primary,.btn.btn-primary{ background:var(--primary); color:#fff; border-color:transparent; }
+.btn.ghost{ background:#fff; }
+.card{
+  background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:var(--sp-6);
+}
+.card.img16x9 .thumb{ aspect-ratio:16/9; border-radius:12px; background:#eee; overflow:hidden; }
+
+/* ===== Header ===== */
+.site-header{
+  position:sticky; top:0; background:rgba(253,236,203,.9); backdrop-filter: blur(6px);
+  border-bottom:1px solid #0000001a; z-index:50;
+}
+.header-inner{ height:64px; display:flex; align-items:center; justify-content:space-between; gap:var(--sp-4); }
+.brand{ font-weight:800; font-size:1.2rem; }
+/* GameTeller 브랜드 색상 (#00000022) */
+.site-header .brand{
+  color: rgba(0,0,0,0.13);
+  color: #00000022;
+}
+.header-actions{ display:flex; align-items:center; gap:12px; }
+.back-btn{ padding:8px 12px; border-radius:10px; border:1px solid #00000022; background:#fff; cursor:pointer; }
+
+/* ===== Layout (left nav + content) ===== */
+.page-wrap{ display:grid; grid-template-columns: 1fr; gap:var(--sp-6); align-items:start; }
+@media (min-width:1024px){
+  .page-wrap{ grid-template-columns: 1fr; }
+}
+
+/* ===== Guest UI layout ===== */
+.page-guest .guest-ui .layout{
+  display:grid; grid-template-columns:1fr; gap:var(--sp-6); align-items:start;
+}
+@media (min-width:1024px){
+  .page-guest .guest-ui .layout{ grid-template-columns:320px 1fr; }
+}
+
+/* ===== Filters panel ===== */
+.page-guest .filters .panel{
+  background:#0f1320; color:#e6edf3;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:16px; padding:20px; box-shadow:0 8px 18px rgba(0,0,0,.30);
+}
+.page-guest .filters .field + .field{ margin-top:16px; }
+.page-guest .filters label{ display:block; font-size:14px; color:#c9d1d9; margin-bottom:8px; }
+.page-guest .filters .hint{ font-size:12px; color:#9aa4b2; margin-top:8px; }
+
+.page-guest .select, .page-guest .filters select{
+  width:100%; background:#0b0e17; color:#e6edf3;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:10px; padding:10px 12px; outline:none;
+}
+.page-guest .btn.block{ display:block; width:100%; margin-top:10px; }
+
+/* ===== Sections ===== */
+.section-title{ font-weight:800; margin:0 0 12px; color:#0e1526; }
+.zone{ margin: 22px 0 28px; }
+
+/* ===== Cards & Grids (dark-style for game cards) ===== */
+.cards{ display:grid; gap:16px; }
+.grid-3{ grid-template-columns: repeat(3, minmax(0,1fr)); }
+@media (max-width: 920px){ .grid-3{ grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (max-width: 600px){ .grid-3{ grid-template-columns: 1fr; } }
+
+.cards .card{
+  background: rgba(10,15,26,.6);
+  border: 1px solid rgba(120,160,255,.15);
+  border-radius: 16px;
+  overflow: hidden;
+  color: #eaf2ff;
+  display: flex; flex-direction: column;
+  box-shadow: 0 10px 28px rgba(0,0,0,.35);
+  padding:0;
+}
+.cards .card .thumb{
+  aspect-ratio:16/9; width:100%; object-fit:cover; display:block; filter:saturate(.95);
+  background:#0b0e17;
+}
+.cards .card .body{ padding: 12px 14px; }
+.cards .card h3.title{ margin:0 0 6px; font-size:16px; color:#d8e9ff; }
+.cards .card .meta{ margin:0; font-size:13px; color:#9eb6d9; opacity:.9; }
+.cards .card .chips{ margin-top:8px; display:flex; flex-wrap:wrap; gap:6px; }
+.cards .card .chip{
+  font-size:12px; padding:3px 8px; border-radius:999px;
+  background: rgba(120,160,255,.12); color:#bcd3ff; border:1px solid rgba(120,160,255,.18);
+}
+
+/* Empty placeholder */
+.empty{
+  color:#9aa4b2; border:1px dashed rgba(255,255,255,.18);
+  border-radius:12px; padding:24px; text-align:center;
+  background: rgba(10,15,26,.3);
+}
+
+/* ===== Dropdown (simple) ===== */
+.dropdown{ position:relative; }
+.dropdown-toggle{ cursor:pointer; }
+.dropdown-menu{
+  position:absolute; right:0; top:calc(100% + 10px); min-width:260px; background:#fff; border-radius:16px;
+  box-shadow:var(--shadow); padding:var(--sp-4); display:none;
+}
+.dropdown.open .dropdown-menu{ display:block; }
+
+/* ===== Responsive fine-tuning ===== */
+@media (prefers-reduced-motion: reduce){
+  .btn,.cards .card{ transition:none !important; }
+}
+.site-header .brand{ color:#0b0e17 !important; }
+
+/* 데스크탑에서 MBTI 패널을 살짝 아래로 내림 */
+@media (min-width: 1024px) {
+  .page-guest .filters .panel{
+    position: static;       /* 혹시 sticky였으면 해제 */
+    margin-top: 80px;       /* 원하는 만큼 조절: 40~80px 추천 */
+  }
+}

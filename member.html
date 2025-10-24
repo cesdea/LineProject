@@ -6,10 +6,10 @@
   <title>GameTeller · 회원</title>
   <link rel="stylesheet" href="./assets/css/main.css" />
 </head>
-<body class="page-member">
+<body class="page-member" data-require-auth="1">
   <header class="site-header">
     <div class="header-inner container">
-      <div class="brand">GameTeller</div>
+      <a class="brand" href="index.html" style="text-decoration:none; color:inherit" >GameTeller</a>
       <nav class="nav"></nav>
       <div class="header-actions">
         <div class="dropdown">
@@ -32,16 +32,39 @@
   </header>
 
   <main class="page-wrap container">
-    <!-- ===== 왼쪽 긴 네비게이션 바(아이콘 5개) ===== -->
+       <!-- ===== 왼쪽 긴 네비게이션 바(아이콘 2개) ===== -->
     <aside class="vnav">
-      <div class="vbar">
-        <!-- TODO: 아이콘 실제 디자인/라벨 교체 -->
-        <button class="vicon" title="검색"      data-action="search"></button>
-        <button class="vicon" title="AI 페이지 "onclick="location.href='aipage.html'"> </button>
-        
-    
-        <button class="vicon" title="MBTI 추천" data-action="mbti"></button>
-        
+      <div class="vbar is-wide">
+        <!-- 검색 -->
+        <button class="vbtn" onclick="location.href='Search.html'" title="검색" aria-label="검색" >
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 21l-4.3-4.3M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15z"
+                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span>검색</span>
+        </button>
+
+        <!-- AI 페이지 -->
+        <a class="vbtn" href="aipage.html" title="AI 페이지" aria-label="AI 페이지">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="3" width="7" height="7" rx="2" fill="currentColor"/>
+            <rect x="14" y="3" width="7" height="7" rx="2" fill="currentColor" opacity=".7"/>
+            <rect x="3" y="14" width="7" height="7" rx="2" fill="currentColor" opacity=".7"/>
+            <rect x="14" y="14" width="7" height="7" rx="2" fill="currentColor"/>
+          </svg>
+          <span>AI 페이지</span>
+        </a>
+
+        <!-- MBTI 추천 -->
+        <a class="vbtn" href="mbti.html" title="MBTI 추천" aria-label="MBTI 추천">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="3" width="7" height="7" rx="2" fill="currentColor"/>
+            <rect x="14" y="3" width="7" height="7" rx="2" fill="currentColor" opacity=".7"/>
+            <rect x="3" y="14" width="7" height="7" rx="2" fill="currentColor" opacity=".7"/>
+            <rect x="14" y="14" width="7" height="7" rx="2" fill="currentColor"/>
+          </svg>
+          <span>MBTI 추천</span>
+        </a>
       </div>
     </aside>
 
@@ -57,7 +80,7 @@
       <!-- ===== 하단: 핫한 게임 유튜브 영상들 (3개) ===== -->
       <section class="zone yt">
         <h2 class="section-title">핫한 게임 유튜브 영상들</h2>
-        <div id="guestYT" class="ytgrid">
+        <div id="memberYT" class="ytgrid">
           <!-- TODO(API): 여기로 3개 트레일러 iframe 렌더 -->
         </div>
       </section>
@@ -70,6 +93,7 @@
   <script src="./assets/js/member.wire.js"></script>
   <script src="./assets/js/nav.js"></script>
   <script src="./assets/js/app.js"></script>
+  <script src="./assets/js/login.js"></script>
 
 </body>
 </html>

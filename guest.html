@@ -9,7 +9,7 @@
 <body class="page-guest">
   <header class="site-header">
     <div class="header-inner container">
-      <div class="brand">GameTeller</div>
+      <a class="brand" href="index.html" style="text-decoration:none; color:inherit" >GameTeller</a>
       <nav class="nav"></nav>
       <div class="header-actions">
         <div class="dropdown login">
@@ -35,15 +35,28 @@
   </header>
 
   <main class="page-wrap container">
-    <!-- ===== 왼쪽 긴 네비게이션 바(아이콘 5개) ===== -->
+   <!-- ===== 왼쪽 긴 네비게이션 바(아이콘 2개) ===== -->
     <aside class="vnav">
-      <div class="vbar">
-        <!-- TODO: 아이콘 실제 디자인/라벨 교체 -->
-        <button class="vicon" title="검색"      data-action="search"></button>
-        <button class="vicon" title="AI 페이지"  data-action="ai"></button>
-        <button class="vicon" title="인기게임"   data-action="popular"></button>
-        <button class="vicon" title="신작게임"   data-action="new"></button>
-        <button class="vicon" title="MBTI 추천" data-action="mbti"></button>
+      <div class="vbar is-wide">
+        <!-- 검색 -->
+        <button class="vbtn" onclick="location.href='Search.html'" title="검색" aria-label="검색" >
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 21l-4.3-4.3M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15z"
+                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span>검색</span>
+        </button>
+
+        <!-- MBTI 추천 -->
+        <a class="vbtn" href="mbti.html" title="MBTI 추천" aria-label="MBTI 추천">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="3" width="7" height="7" rx="2" fill="currentColor"/>
+            <rect x="14" y="3" width="7" height="7" rx="2" fill="currentColor" opacity=".7"/>
+            <rect x="3" y="14" width="7" height="7" rx="2" fill="currentColor" opacity=".7"/>
+            <rect x="14" y="14" width="7" height="7" rx="2" fill="currentColor"/>
+          </svg>
+          <span>MBTI 추천</span>
+        </a>
       </div>
     </aside>
 

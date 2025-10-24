@@ -82,14 +82,18 @@
   </style>
 </head>
 
-<body class="page-ai">
+<body class="page-ai"  data-require-auth="1">
   <!-- 공통 헤더 -->
   <header class="site-header">
     <div class="header-inner container">
-      <div class="brand">GameTeller</div>
+      <a class="brand" href="index.html" style="text-decoration:none;" >GameTeller</a>
       <nav class="nav"></nav>
       <div class="header-actions">
-        <a href="./index.html" class="back-btn">← 메인으로</a>
+        <div class="dropdown">
+          <button class="btn nickname dropdown-toggle" data-dropdown-toggle>
+            <span id="nicknameLabel">회원 닉네임</span> 
+          </button>
+        </div>
       </div>
     </div>
   </header>
@@ -193,6 +197,7 @@
   <!-- ✅ 외부 JS 로직 로드: 반드시 CONFIG 아래에 -->
   <script src="./assets/js/ai.js"></script>
   <script src="./assets/js/app.js"></script>
+  <script src="./assets/js/login.js"></script>
 
 </body>
 </html>
