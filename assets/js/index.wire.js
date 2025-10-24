@@ -62,12 +62,26 @@ btnLogin.addEventListener('click', () => {
     alert('이메일을 입력하세요.');
     inputEmail.focus();
     return;
+  }  
+  // 이메일 형식 확인
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRe.test(email)) {
+    alert('올바른 이메일 형식이 아닙니다.');
+    inputEmail.focus();
+    return;
   }
   if (!pw) {
     alert('비밀번호를 입력하세요.');
     inputPw.focus();
     return;
   }
+    // 비밀번호 길이: 정확히 4자리
+  if (pw.length < 4) {
+    alert('비밀번호는 올바르지 않는 비밀번호 입니다');
+    inputPw.focus();
+    return;
+  }
+
 
 // 데모 계정 검증
 const match = DEMO_ACCOUNTS.find(acc => acc.email === email && acc.password === pw);
