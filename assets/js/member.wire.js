@@ -7,48 +7,6 @@ function esc(v){
     .replace(/"/g,'&quot;')
     .replace(/'/g,'&#39;');
 }
-// 로그인 상태 확인 + 사용자 정보 표시 + 로그아웃
-function isLoggedIn() {
-}
-
-function isLoggedIn() {
-  return localStorage.getItem('gt_isLoggedIn') === '1';
-}
-function getUserEmail() {
-  return localStorage.getItem('gt_userEmail') || '';
-}
-function logout() {
-  localStorage.removeItem('gt_isLoggedIn');
-  localStorage.removeItem('gt_userEmail');
-  alert('로그아웃되었습니다.');
-  location.href = './index.html';
-}
-
-// 페이지 진입 시 로그인 여부 확인
-if (!isLoggedIn()) {
-  alert('로그인 후 이용해주세요.');
-  location.href = './index.html';
-} else {
-  // 이메일에서 닉네임 추출
-  const email = getUserEmail();
-  const nickname = email.split('@')[0];
-
-  // 페이지에 표시
-  const nicknameLabel = document.getElementById('nicknameLabel');
-  const emailSpan = document.getElementById('userEmail');
-  if (nicknameLabel) nicknameLabel.textContent = nickname;
-  if (emailSpan) emailSpan.textContent = email;
-
-  // 로그아웃 버튼이 있다면 연결 (dropdown-menu 안에 직접 추가)
-  const logoutBtn = document.createElement('button');
-  logoutBtn.textContent = '로그아웃';
-  logoutBtn.className = 'btn btn-ghost';
-  logoutBtn.style.marginTop = '8px';
-  logoutBtn.addEventListener('click', logout);
-  const profileMenu = document.querySelector('.profile-menu');
-  if (profileMenu) profileMenu.appendChild(logoutBtn);
-}
-
 
 // 진단/도움 유틸 (배너, 키체크, 플레이스홀더, 로깅 fetch)
 
